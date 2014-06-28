@@ -36,6 +36,11 @@ typedef enum
 
 @interface MVFollow : NSObject
 
+// Convenience methods
++ (void)followUser:(NSString *)username withCompletion:(void (^)(BOOL success, NSError *error))completion;
++ (void)openProfile:(NSString *)username inClient:(TwitterClient)twitterClient;
+
+
 /**
  Follows a user directly without a client and simply accesses the iOS account store.
  @param username The username to follow.

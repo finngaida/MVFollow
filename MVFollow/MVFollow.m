@@ -27,6 +27,14 @@
 
 @implementation MVFollow
 
++ (void)followUser:(NSString *)username withCompletion:(void (^)(BOOL success, NSError *error))completion {
+    [[MVFollow new] followUser:username withCompletion:completion];
+}
+
++ (void)openProfile:(NSString *)username inClient:(TwitterClient)twitterClient {
+    [[MVFollow new] openProfile:username inClient:TwitterClient];
+}
+
 - (void)followUser:(NSString *)username withCompletion:(void (^)(BOOL success, NSError *error))completion
 {
     ACAccountStore *accountStore = [ACAccountStore new];
